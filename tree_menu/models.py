@@ -37,3 +37,6 @@ class MenuEntity(BaseMenu):
 	class Meta:
 		verbose_name = 'menu title'
 		verbose_name_plural = 'menu titles'
+
+	def __str__(self):
+		return self.title
