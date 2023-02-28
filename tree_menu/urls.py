@@ -6,5 +6,5 @@ app_name = 'tree_menu'
 
 # my urls are below
 urlpatterns = [
-	path('', views.index, name='index')
+	path('', views.BaseMenu.as_view())
 ]
