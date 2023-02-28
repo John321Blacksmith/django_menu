@@ -9,14 +9,12 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import sys
 import json
 from pathlib import Path
+from . import secrs
+sys.path.append(secrs.PROJECT_LOCATION)
 
-try:
-    with open('secrs.json', mode='r', encoding='utf-8') as f:
-        secrets = json.load(f)
-except (Exception, json.JSONDecodeError) as error:
-    print(error)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secrets['secret_production_key']
+SECRET_KEY = secrs.SECRET_PROD_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +36,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # custom apps
+    'tree_menu',
+    
+    # default ones
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

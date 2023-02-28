@@ -1,3 +1,5 @@
 menu_env/
 __pycache__/
+*secrs.py
 *.json
+*.sqlite3
