@@ -1,0 +1,15 @@
+{% extends 'tree_menu/base.html' %}
+{% block content %}
+<p>Here is the example of the django tree-like menu</p>
+<ul>
+	{% for m_point in main_points %}
+	<a href='{{ m_point.url }}'>{{ m_point.title }}</a>
+	{% empty %}
+		{% for s_point in sub_points %}
+		<a href='{{ s_point.url }}'>{{ s_point.title }}</a>
+		{% empty %}
+	{% endfor %}
+
+</ul>
+
+{% endblock content %}
