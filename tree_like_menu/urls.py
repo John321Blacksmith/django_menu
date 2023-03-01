@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from tree_menu.views import MainView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', include('tree_menu.urls')),
+    # path('main/', include('tree_menu.urls')),
+    # this is a main index pattern
+    path('', MainView.as_view(), name='index')
 ]
