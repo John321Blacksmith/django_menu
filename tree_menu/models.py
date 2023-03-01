@@ -1,11 +1,11 @@
 from django.db import models
-from django.urls import reverse
+
 
 # Create your models here.
 
 class BaseMenu(models.Model):
-	
 	existence = models.BooleanField(default=True, verbose_name='visibility')
+	order = models.IntegerField(default=10, verbose_name='order')
 
 	class Meta:
 		abstract = True
@@ -28,11 +28,11 @@ class Menu(BaseMenu):
 
 class MenuEntity(BaseMenu):
 	"""This blueprint"""
-	menu = models.ForeignKey(BaseMenu, on_delete=models.CASCADE)
-	title = # title of the menu item
-	parent = # parent menu items
-	url = # unique url for the item
-	named_url = # defined url pattern
+	menu = models.ForeignKey(Menu, on_delete=models.CASCADE, verbose_name='menu', blank=True, null=True)
+	parent = models.ForeignKey('self', on_delete=models.CASCADE, verbose_name='parent', blank=True, null=True)
+	title = models.CharField(max_length=50, verbose_name='title')
+	url = models.CharField(max_length=255, verbose_name='url')
+	named_url = models.CharField(max_length=255, verbose_name='url pattern', blank=True)
 
 	class Meta:
 		verbose_name = 'menu title'
