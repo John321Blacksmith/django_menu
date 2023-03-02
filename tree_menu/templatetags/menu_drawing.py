@@ -1,10 +1,10 @@
 from django import template
-from tree_menu import Menu
+from tree_menu.models import Menu
 
 register = template.Library()
 
 
-@register.inclusion_tag('template_markups/menu.html', takes_context=True)
+@register.inclusion_tag('template_markups/menu_blueprint.html', takes_context=True)
 def draw_menu(context, slug):
 	try:
 	 # here I could use the 'select_related()' method but it's only

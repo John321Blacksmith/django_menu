@@ -19,7 +19,6 @@ from tree_menu.views import MainView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('main/', include('tree_menu.urls')),
     # this is a main index pattern
     path('', MainView.as_view(), name='index')
 ]
