@@ -2,7 +2,6 @@ from django.db import models
 from django.urls import reverse
 
 
-
 # Create your models here.
 
 class BaseMenu(models.Model):
@@ -23,14 +22,14 @@ class Menu(BaseMenu):
 	slug = models.SlugField(max_length=255, verbose_name='slug', unique=True,
 							help_text='Use this snippet along with a template tag as a name of the rendered menu')
 	named_url = models.CharField(max_length=255, blank=True, verbose_name='unique_name')
-	# url = models.CharField(max_length=255, verbose_name='url')
+	url = models.CharField(max_length=255, verbose_name='url')
 
 	class Meta:
 		verbose_name = 'menu'
 		verbose_name_plural = 'menus'
 
 	def get_full_path(self):
-		"""This method returns a snippet of the particular url related to the  current item."""
+		"""This method returns a snippet of the particular url related to the current item."""
 		if self.named_url:
 			# define a pattern for the item
 			url = reverse(self.named_url)
