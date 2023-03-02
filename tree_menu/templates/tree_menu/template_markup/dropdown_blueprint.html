@@ -1,0 +1,9 @@
+{% load dropdown_making %}
+
+<!-- Here I have to integrate the bootstrap dropdown dynamic -->
+
+{% for item in item.items.all %}
+	<!-- dropdown entity -->
+	<a href='{{ item.get_url }}'>{{ item.title }}</a>
+	{% empty %}
+{% endfor %}

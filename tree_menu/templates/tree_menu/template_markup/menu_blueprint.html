@@ -1,0 +1,15 @@
+{% load dropdown_making %}
+<ul>
+	{% with item=menu.items.all %}
+		{% for i in items %}
+			{% if i.items.all %}
+				<li>
+					<p>{{ item.title }}</p>
+					{% make_dropdown i %}
+				</li>
+			{% else %}
+			<li><a href='{{ i.get_url}}'>{{ i.title }}</a></li>
+			{% endif %}
+		{% endfor %}
+	{% endwith %}
+</ul>
