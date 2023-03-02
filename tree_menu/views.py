@@ -4,10 +4,11 @@ from .models import Menu, MenuEntity
 # Create your views here.
 
 
-class MainView(TemplateView):
-	"""This class represents a main menu and all the corresponding behavior on the page."""
+class AbsView(TemplateView):
+	"""
+	This blueprint gives a template of the view to be applied to all the pages.
+	"""
 	model = Menu
-	template_name = 'tree_menu/index.html'
 
 	def get_context_data(self, *args, **kwargs):
 		"""This method returns a bunch of menus that do exist and their respective items."""
@@ -15,3 +16,18 @@ class MainView(TemplateView):
 		context['main_points'] = self.model.objects.all().filter(existence=True)
 
 		return context
+
+
+class IndexView(AbsView):
+	"""Index view class."""
+	template_name = 'tree_menu/index.html'
+
+
+class ProductView(AbsView):
+	"""Products view class."""
+	template_name = 'tree_menu/products.html'
+
+
+class VehicleView(AbsView):
+	"""Vehicles view class."""
+	template_name = 'tree_menu/vehicles.html'

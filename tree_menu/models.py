@@ -19,7 +19,7 @@ class BaseMenu(models.Model):
 class Menu(BaseMenu):
 	"""The father model that represents a menu item in general."""
 	title = models.CharField(max_length=50, verbose_name='title')
-	slug = models.SlugField(max_length=255, verbose_name='slug', unique=True,
+	slug = models.SlugField(max_length=255, verbose_name='slug', 
 							help_text='Use this snippet along with a template tag as a name of the rendered menu')
 	named_url = models.CharField(max_length=255, blank=True, verbose_name='unique_name')
 	url = models.CharField(max_length=255, verbose_name='url')
