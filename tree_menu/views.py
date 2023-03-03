@@ -11,7 +11,7 @@ class AbsView(TemplateView):
 	model = Menu
 
 	def get_context_data(self, *args, **kwargs):
-		"""This method returns a bunch of menus that do exist and their respective items."""
+		"""This method returns a bunch of menus that do exist and their respective items and subitems."""
 		context = super().get_context_data(*args, **kwargs)
 		context['main_points'] = self.model.objects.all().filter(existence=True)
 
