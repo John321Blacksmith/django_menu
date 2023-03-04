@@ -8,9 +8,9 @@ An entire menu system is stored in the DataBase. All the levels of menu are eith
 
 # Setting up
 1) Assuming you've got the latest version of Django and everything based on the requirements.txt is ready to use, set up a superuser account:
-'''
+```
 python manage.py createsuperuser
-''';
+```
 2) Then create a blank pythonic file and name it, say, **secrs.py** where you should store your Django SECRET KEY, your admin-password and username;
 3) In settings.py, if you are up to, besides your SECRET KEY, you can retrive all the private data and locate it in the **secrs.py**. So you can further import this file to **settings.py** and substantiate all the retrived data by just the imported variables. Note that the file with your credentials should be located in the *same* directory as the **settings.py** file is. Otherwise, you will have to change a system path in working program;
 4) Run the server and go to the admin page;
