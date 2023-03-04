@@ -15,12 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from tree_menu.views import IndexView, ProductView, VehicleView
+from tree_menu.views import (
+    IndexView,
+    ProductView,
+    VehicleView,
+    BooksView
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # this is a main index pattern
     path('', IndexView.as_view(), name='index'),
+
+    # the  patterns below are the demo ones
+    
+    # an example page designated for the products-oriented menus
     path('products/', ProductView.as_view(), name='products'),
+    # an example page designated for the cars-oriented menus
     path('auto/', VehicleView.as_view(), name='auto'),
+    # an example page designated for the books-oriented menus
+    path('books/', BooksView.as_view(), name='books')
 ]
+ 

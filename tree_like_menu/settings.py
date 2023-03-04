@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import sys
-import json
 from pathlib import Path
 from . import secrs
 sys.path.append(secrs.PROJECT_LOCATION)

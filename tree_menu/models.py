@@ -4,7 +4,10 @@ from django.urls import reverse
 
 # Create your models here.
 
-class BaseMenu(models.Model):
+class AbsMenu(models.Model):
+	"""
+	The abstract class that gives the common featuers appliable to all classes below.
+	"""
 	existence = models.BooleanField(default=True, verbose_name='visibility')
 	order = models.IntegerField(default=10, verbose_name='order')
 
@@ -16,8 +19,10 @@ class BaseMenu(models.Model):
 
 
 # define a blueprint of the base menu object
-class Menu(BaseMenu):
-	"""The father model that represents a menu item in general."""
+class Menu(AbsMenu):
+	"""
+	The father model that represents a menu item in general.
+	"""
 	title = models.CharField(max_length=50, verbose_name='title')
 	slug = models.SlugField(max_length=255, verbose_name='slug', 
 							help_text='Use this snippet along with a template tag as a name of the rendered menu')
@@ -28,19 +33,11 @@ class Menu(BaseMenu):
 		verbose_name = 'menu'
 		verbose_name_plural = 'menus'
 
-	def get_full_path(self):
-		if self.named_url:
-			url = reverse(self.named_url)
-		else:
-			url = f'/{self.slug}/'
-
-		return url
-
 	def __str__(self):
 		return self.title
 
 
-class MenuEntity(BaseMenu):
+class MenuEntity(AbsMenu):
 	"""
 	This blueprint represents a child entity of the base menu.
 	"""
@@ -51,22 +48,12 @@ class MenuEntity(BaseMenu):
 	class Meta:
 		verbose_name = 'menu entity'
 		verbose_name_plural = 'menu entities'
-
-	def get_url(self):
-		if self.named_url:
-			url = reverse(self.named_url)
-		elif self.url:
-			url = self.url
-		else:
-			url = '/'
-
-		return url
-
+		
 	def __str__(self):
 		return self.title
 
 
-class SubMenuEntity(BaseMenu):
+class SubMenuEntity(AbsMenu):
 	"""
 	This blueprint represents a child entity from the Menu entity.
 	"""
@@ -77,12 +64,6 @@ class SubMenuEntity(BaseMenu):
 	class Meta:
 		verbose_name = 'sub-entity'
 		verbose_name_plural = 'sub-entities'
-
-	def get_full_url(self):
-		"""This method gets a url of the parent item and 
-		   returns a full url of the entity."""
-		parent_url = None
-		pass
 
 	def __str__(self):
 		return self.title

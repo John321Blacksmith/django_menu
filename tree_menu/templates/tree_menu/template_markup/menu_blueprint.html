@@ -1,17 +1,23 @@
 {% load menu_drawing %}
 
 <div class="dropdown-menu">
-  {% for m_point in main_points %}
+
+  <!-- The block contains all the menu objects -->
+  {% for m_point in menu_objects %}
       <div class="main-title">
         <a href="{{ m_point.url }}">{{ m_point.title }}</a>
         <div class="menu-entities">
+
+          <!-- the first layer of the block shows the menu entities -->
         {% for entity in m_point.menuentity_set.all %}
           <div class="entity-title">
-            <a href="{{ entity.url }}">{{ entity.title }}</a>
+            <a href="{{ m_point.url }}/{{ entity.named_url }}">{{ entity.title }}</a>
             <div class="sub-entities">
+
+              <!-- The second one shows all the sub-items the menu item contains -->
             {% for sub_entity in entity.submenuentity_set.all %}
               <div class="sub-entity-title">
-                <a href="{{ sub_entity.title }}">{{ sub_entity.title }}</a>
+                <a href="{{ m_point.url }}/{{ entity.named_url }}/{{ sub_entity.named_url }}">{{ sub_entity.title }}</a>
               </div>
             {% empty %}
           {% endfor %}
