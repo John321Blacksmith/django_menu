@@ -2,22 +2,20 @@
 
 <div class="dropdown-menu">
   {% for m_point in main_points %}
-    <div class="dropitem">
       <div class="main-title">
         <a href="{{ m_point.url }}">{{ m_point.title }}</a>
-      </div>
-      <div class="menu-entities">
+        <div class="menu-entities">
         {% for entity in m_point.menuentity_set.all %}
-        <div class="entity-title">
-          <a href="{{ entity.url }}">{{ entity.title }}</a>
-        </div>
-          <div class="sub-entities">
-          {% for sub_entity in entity.submenuentity_set.all %}
-          <div class="sub-entity-title">
-            <a href="{{ sub_entity.title }}">{{ sub_entity.title }}</a>
-          </div>
+          <div class="entity-title">
+            <a href="{{ entity.url }}">{{ entity.title }}</a>
+            <div class="sub-entities">
+            {% for sub_entity in entity.submenuentity_set.all %}
+              <div class="sub-entity-title">
+                <a href="{{ sub_entity.title }}">{{ sub_entity.title }}</a>
+              </div>
             {% empty %}
           {% endfor %}
+            </div>
           </div>
           {% empty %}
         {% endfor %}

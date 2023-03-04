@@ -3,37 +3,20 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-  .dropitem {
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
 
-  .entity-title {
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
   .dropdown-menu {
     position: fixed;
     display: block;
   }
 
-  .menu-entities {
-    display: none;
-    position: absolute;
-/*    top: 0;*/
-    left: 50%;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  .main-title, .entity-title, .sub-entity-title {
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
   }
 
-  .sub-entities {
+  .menu-entities, .sub-entities {
     display: none;
     position: absolute;
 /*    top: 0;*/
@@ -45,36 +28,30 @@
   }
   
   .menu-entities a {
-    color: black;
-    padding: 12px 16px;
+    color: green;
+    padding: 12px 10px;
     text-decoration: none;
     display: block;
   }
 
   .sub-entities a {
-    color: black;
-    padding: 12px 16px;
+    color: red;
+    padding: 12px 10px;
     text-decoration: none;
     display: block;
   }
 
-/* style the second layer of the menu */
-  .sub-entities a:hover {background-color: #ddd;}
-
-  .dropitem:hover .sub-entities {display: block;}
-  
-  .dropitem:hover .sub-entities {background-color: #3e8e41;}
-  
-
-/* style the first layer of the menu */
+/* style the first layer of menu */
   .menu-entities a:hover {background-color: #ddd;}
+  .main-title:hover .menu-entities {display: block;}
+  .main-title:hover .menu-entities {background-color: white;}
 
-  .entity-title:hover .menu-entities {display: block;}
+/*style the second layer of menu*/
+  .menu-entities a:hover {background-color: #ddd;}
+  .entity-title:hover .sub-entities {display: block;}
+  .entity-title:hover .sub-entities {background-color: white;}
+
   
-  .entity-title:hover .menu-entities {background-color: #3e8e41;}
-
-
-
   </style>
   </head>
   <body>
