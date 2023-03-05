@@ -13,7 +13,11 @@ python manage.py createsuperuser
 ```
 2) Then create a blank pythonic file and name it, say, **secrs.py** where you should store your Django SECRET KEY, your admin-password and username;
 3) In settings.py, if you are up to, besides your SECRET KEY, you can retrive all the private data and locate it in the **secrs.py**. So you can further import this file to **settings.py** and substantiate all the retrived data by just the imported variables. Note that the file with your credentials should be located in the *same* directory as the **settings.py** file is. Otherwise, you will have to change a system path in working program;
-4) Run the server and go to the admin page. Here you can see the menus already exist. This is how it looks like when you've created more than one menu;
+4) Before running the server, issue the command:
+```python manage.py makemigrations tree_menu```
+and then:
+```python manage.py migrate```
+Run the server and go to the admin page. Here you can see the menus already exist. This is how it looks like when you've created more than one menu;
 ![admin page](images/deletion.jpeg)
 5) When you delete a menu, all the children and sub-children belonging will be deleted as well. This is how a menu system looks like;
 ![delete a tree](images/tree_sys.jpeg)
