@@ -26,7 +26,7 @@ class Menu(AbsMenu):
 	title = models.CharField(max_length=50, verbose_name='title')
 	slug = models.SlugField(max_length=255, verbose_name='slug', 
 							help_text='Use this snippet along with a template tag as a name of the rendered menu')
-	named_url = models.CharField(max_length=255, blank=True, verbose_name='unique_name')
+	named_url = models.CharField(max_length=255, blank=True, verbose_name='named_url')
 	url = models.CharField(max_length=255, verbose_name='url')
 
 	class Meta:
@@ -43,7 +43,7 @@ class MenuEntity(AbsMenu):
 	"""
 	menu = models.ForeignKey(Menu, on_delete=models.CASCADE, verbose_name='menu', blank=True, null=True)
 	title = models.CharField(max_length=50, verbose_name='title')
-	named_url = models.CharField(max_length=255, verbose_name='url pattern', blank=True)
+	named_url = models.CharField(max_length=255, verbose_name='named_url', blank=True)
 
 	class Meta:
 		verbose_name = 'menu entity'
@@ -59,7 +59,7 @@ class SubMenuEntity(AbsMenu):
 	"""
 	menu_entity = models.ForeignKey(MenuEntity, on_delete=models.CASCADE)
 	title = models.CharField(max_length=50, verbose_name='title')
-	named_url = models.CharField(max_length=255, verbose_name='url pattern', blank=True)
+	named_url = models.CharField(max_length=255, verbose_name='named_url', blank=True)
 	
 	class Meta:
 		verbose_name = 'sub-entity'
