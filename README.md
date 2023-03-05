@@ -19,7 +19,7 @@ python manage.py createsuperuser
 ![delete a tree](images/tree_sys.jpeg)
 6) So, lets create a menu "Cars";
 ![new menu](images/new_menu.jpeg)
-7) As mentioned before, there is a 'slug' name that represents a word in the HTML template you want to draw menu to ```{% draw_menu 'slug' %}```;
+7) As mentioned before, there is a 'slug' name that represents a word in the HTML template you want to draw menu to ```{% draw_menu 'slug' %}```. Currently, the slug name is *vehicles*;
 ![menu fields](images/new_menu_fields.jpeg)
 8) Then we would like to create a menu entity that is gonna represent a subcategory of the main menu; lets call it "Pickup Trucks", one of the car types;
 ![new menu entity](images/new_men_entity.jpeg)
