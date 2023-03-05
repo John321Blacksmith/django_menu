@@ -36,6 +36,6 @@ class VehicleView(AbsView):
 
 	
 class BooksView(AbsView):
-	"""Vehicles view class."""
+	"""Books view class."""
 	template_name = 'tree_menu/books.html'
 	
