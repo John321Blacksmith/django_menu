@@ -19,11 +19,11 @@ python manage.py createsuperuser
 ![delete a tree](images/tree_sys.jpeg)
 6) So, lets create a menu "Cars";
 ![new menu](images/new_menu.jpeg)
-7) As mentioned before, there is a 'slug' name that represents a word in the HTML template you want to draw menu to;
+7) As mentioned before, there is a 'slug' name that represents a word in the HTML template you want to draw menu to ```{% draw_menu 'slug' %}```;
 ![menu fields](images/new_menu_fields.jpeg)
 8) Then we would like to create a menu entity that is gonna represent a subcategory of the main menu; lets call it "Pickup Trucks", one of the car types;
 ![new menu entity](images/new_men_entity.jpeg)
-9) When defining a menu entity, a url of both child an subchild of the menu is generated automatically in thanks to the named url fields that are appended to the main url with each deeper level;
+9) When defining a menu entity, a url of both child an subchild of the menu is generated automatically in thanks to the **url pattern fields** that are appended to the main url with each deeper level;
 ![new menu entity fields](images/n_menu_ent_fields.jpeg)
 10) Here we also may want to add a particular Car-Pickup Truck vendor, say "Toyota GMT-5"; this sub-menu entity is gonna be the third layer of the menu;
 ![new sub menu etity](images/new_submenu.jpeg)
