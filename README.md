@@ -40,6 +40,5 @@ python manage.py createsuperuser
 13) Here are the fields of the **Sub-Menu Entity** model;
 ![sub menu entity fields](images/new_sub_m_fields.jpeg)
 14) And, eventually, go to the */auto* page. You'll see the menu **Cars** with hoverable sheets: **Pickup Trucks** and **Toyota GMT-5**;
-15) You can also create another menu: if you are going to add one to the same page, do the same as above and set the **same** slug to the **Menu** model.
-But if you feel like to create another menu on other pages, just specify one of the **slugs** that already exist in the HTML templates, for example ```{% draw_menu 'index' %}``` which will invoke the index page and all the menus assosiated by the slug *"index"*.
+15) You can also create another menu: if you are going to add one to the same page, do the same as above and set the **same** slug to the **Menu** model. But if you feel like to create another menu on other pages, just specify one of the **slugs** that already exist in the HTML templates, for example ```{% draw_menu 'index' %}``` which will invoke the index page and all the menus assosiated by the slug *"index"*;
 16) Here we are :-).
