@@ -7,10 +7,10 @@ The *second one* contains all the menu entities each **menu** may contain. The *
 An entire menu system is stored in the DataBase. All the levels of menu are either modified or deleted via the Django-admin toolpage.
 
 # Setting up
-1) First of all, establish your virtual environment and manage to install all the required stuff mentioned in the **requirements.txt**
+1) First of all, establish your virtual environment and manage to install all the required stuff mentioned in the **requirements.txt**;
 ```
 pip install -r requirements.txt
-```;
+```
 
 2) Then create a blank pythonic file and name it, say, **secrs.py** where you should store your Django SECRET KEY, your admin-password and username;
 
