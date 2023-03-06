@@ -7,6 +7,7 @@ The *second one* contains all the menu entities each **menu** may contain. The *
 An entire menu system is stored in the DataBase. All the levels of menu are either modified or deleted via the Django-admin toolpage.
 
 # Setting up
+First thing first, initialize an empty Git repository in the blank directory.
 1) After having cloned this repository, establish your virtual environment and manage to install all the required stuff mentioned in the **requirements.txt**;
 ```
 pip install -r requirements.txt
