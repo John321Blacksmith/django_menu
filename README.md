@@ -8,7 +8,7 @@ An entire menu system is stored in the DataBase. All the levels of menu are eith
 
 # Setting up
 First thing first, initialize an empty Git repository in the blank directory.
-1) After having cloned this repository, establish your virtual environment, activate it and manage to install all the required stuff mentioned in the **requirements.txt**;
+1) After having cloned this repository, establish your virtual environment, activate it, move then to the just-cloned project file and manage to install all the required stuff mentioned in the **requirements.txt**;
 ```
 pip install -r requirements.txt
 ```
