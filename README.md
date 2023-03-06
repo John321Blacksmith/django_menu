@@ -7,12 +7,12 @@ The *second one* contains all the menu entities each **menu** may contain. The *
 An entire menu system is stored in the DataBase. All the levels of menu are either modified or deleted via the Django-admin toolpage.
 
 # Setting up
-1) First of all, establish your virtual environment and manage to install all the required stuff mentioned in the **requirements.txt**;
+1) After having cloned this repository, establish your virtual environment and manage to install all the required stuff mentioned in the **requirements.txt**;
 ```
 pip install -r requirements.txt
 ```
 
-2) After having cloned this repository, create a blank pythonic file and name it, say, **secrs.py** where you should store your Django SECRET KEY, your PROJECT_LOCATION, your admin-password and username;
+2) Create a blank pythonic file and name it, say, **secrs.py** where you should store your Django SECRET KEY, your PROJECT_LOCATION, your admin-password and username;
 
 3) In settings.py, if you are up to, besides your SECRET KEY, you can retrieve all the private data and locate it in the **secrs.py**, so you can further import this file to **settings.py** and substantiate all the retrived data by just the imported variables. Note that the file with your credentials should be located in the *same* directory as the **settings.py** file is. Otherwise, you will have to change a system path in a working program. You can generate a secret key and assign it to SECRET KEY, it should work;
 
